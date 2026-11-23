@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>URIEL FITNESS</title>
+<meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="URIEL"><meta name="theme-color" content="#0B0B0D"><link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="icon-180.png">
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:dark;--bg:#0B0B0D;--card:#17171c;--card2:#23232b;--g:#39FF14;--t:#fff;--m:#b9b9c4;--line:#30303a;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;background:var(--bg);color:var(--t);font:400 17px/1.45 Heebo,-apple-system,"Segoe UI",sans-serif}
+body{max-width:430px;margin:0 auto;min-height:100vh}
+main{padding:14px 16px 130px;animation:in .3s ease}
+@keyframes in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+h1{font-size:30px;margin:6px 0 4px;font-weight:800;line-height:1.2}
+.sub{color:var(--m);font-size:15px}.card{background:var(--card);border-radius:20px;padding:16px;margin-bottom:12px;border:1px solid #202028}
+.row{display:flex;align-items:center;justify-content:space-between;gap:10px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.big{font-size:32px;font-weight:800;line-height:1.1}.g{color:var(--g)}.m{color:var(--m)}.u{font-size:15px;color:var(--m);font-weight:400}
+.btn{display:block;width:100%;border:0;border-radius:18px;background:var(--g);color:#000;font:800 20px Heebo,sans-serif;padding:18px;cursor:pointer;min-height:56px}
+.btn:active{transform:scale(.97)}.btn.o{background:transparent;color:var(--g);border:2px solid var(--g)}.btn.s{font-size:17px;padding:14px;min-height:52px}
+.bar{height:12px;background:var(--card2);border-radius:9px;overflow:hidden;margin-top:8px}.bar i{display:block;height:100%;background:var(--g);border-radius:9px;transition:width .5s}
+nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;display:flex;background:rgba(16,16,20,.97);backdrop-filter:blur(14px);border-top:1px solid var(--line);padding:8px 4px calc(10px + env(safe-area-inset-bottom,0px));z-index:5}
+nav button{flex:1;background:none;border:0;color:var(--m);font:600 13px Heebo,sans-serif;display:flex;flex-direction:column;align-items:center;gap:2px;cursor:pointer;min-height:52px}
+nav .ic{font-size:24px}nav button.on{color:var(--g)}
+.chip{display:inline-block;padding:10px 16px;border-radius:22px;background:var(--card2);color:var(--t);font:600 15px Heebo;margin:0 0 8px 6px;cursor:pointer;border:0}
+.chip.on{background:var(--g);color:#000}.mg{display:inline-block;padding:3px 10px;border-radius:10px;background:#16301a;color:var(--g);font-size:14px;font-weight:600;margin-left:6px}
+.vid{height:110px;border-radius:16px;background:linear-gradient(135deg,#1c241a,#0f1410);display:flex;align-items:center;justify-content:center;flex-direction:column;color:var(--m);font-size:14px;margin:10px 0}.vid b{font-size:30px;color:var(--g)}
+.set{display:grid;grid-template-columns:42px 1fr 1fr 52px;gap:8px;align-items:center;margin-bottom:10px}
+input,select{width:100%;background:var(--card2);border:1px solid var(--line);color:#fff;border-radius:14px;padding:14px 10px;font:700 20px Heebo;text-align:center}
+input::placeholder{color:#7d7d89}.ff{text-align:right;font:600 17px Heebo;margin-bottom:10px}
+.ck{width:52px;height:52px;border-radius:14px;border:2px solid #4a4a55;background:none;color:#000;font-size:26px;cursor:pointer}.ck.d{background:var(--g);border-color:var(--g)}
+.top{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
+.link{background:none;border:0;color:var(--g);font:700 16px Heebo;cursor:pointer;padding:10px 0}.link.r{color:#ff7b7b}
+.sheet{position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:9;display:flex;align-items:flex-end;justify-content:center}
+.sheet>div{background:var(--card);width:100%;max-width:430px;max-height:90vh;overflow:auto;border-radius:24px 24px 0 0;padding:20px 16px calc(24px + env(safe-area-inset-bottom,0px));animation:in .25s}
+.opt{padding:16px;border-radius:14px;background:var(--card2);margin-bottom:8px;font-weight:600;cursor:pointer}
+.pr{display:flex;justify-content:space-between;gap:10px;padding:12px 0;border-bottom:1px solid var(--line)}.pr:last-child{border:0}
+.empty{color:var(--m);text-align:center;padding:14px 4px;font-size:16px}
+.tag{font-size:14px;background:#2a2410;color:#ffd36b;border-radius:8px;padding:3px 9px;font-weight:600}
+#rp{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;background:#101014;border-top:2px solid var(--g);padding:12px 16px calc(14px + env(safe-area-inset-bottom,0px));z-index:6}
+.tm{font-size:44px;font-weight:800;text-align:center;line-height:1}.bub{max-width:88%;padding:12px 14px;border-radius:18px;margin-bottom:10px}.bub.u{background:var(--g);color:#000;margin-right:auto}.bub.c{background:var(--card2)}
+.ph{position:relative}.ph img{width:100%;border-radius:12px;display:block}.ph.s img{outline:3px solid var(--g)}.ph button{position:absolute;top:4px;left:4px;border:0;border-radius:50%;width:28px;height:28px;background:rgba(0,0,0,.7);color:#fff}
+</style>
+</head>
+<body>
+<div id="screen"></div><div id="ov"></div><nav id="nav"></nav><input type="file" accept="image/*" id="fp" hidden onchange="addPh(this)">
+<script>
+const TABS=[["home","🏠","בית"],["train","🏋️","אימונים"],["food","🍽️","תזונה"],["prog","📈","התקדמות"],["coach","💬","מאמן"]];
+const PLAN=[
+{d:"יום א׳",dw:0,n:"ידיים ובטן",f:"דגש על דו ראשי ותלת ראשי",g:[["דו ראשי",[["סלסול מוט EZ",3,10],["סלסול פטישים",3,12]]],["תלת ראשי",[["פושדאון בכבל",3,12],["הרחבת תלת מעל הראש",3,12]]],["בטן",[["כיפוף בטן בכבל",3,15],["הרמות ברכיים בתלייה",3,12]]]]},
+{d:"יום ג׳",dw:2,n:"גב, חזה וכתפיים",f:"בלי עבודת ידיים ישירה, לצורך התאוששות",g:[["חזה",[["לחיצת חזה בשיפוע",3,10]]],["גב",[["משיכת פולי עליון",3,10],["חתירה בכבל בישיבה",3,10]]],["כתפיים",[["לחיצת כתפיים",3,10],["הרמות צד",3,12]]]]},
+{d:"יום ה׳",dw:4,n:"ידיים, בטן ורגליים",f:"נפח ידיים מופחת",g:[["רגליים",[["לחיצת רגליים",3,12],["כפיפת ברכיים שכיבה",3,12]]],["ידיים",[["סלסול משקולות בישיבה",2,12],["לחיצה צרפתית",2,12]]],["בטן",[["פלאנק",3,45],["הרמות רגליים שכיבה",3,15]]]]}];
+const ALTS={"סלסול מוט EZ":["סלסול משקולות","סלסול בכבל"],"סלסול פטישים":["סלסול חבל","סלסול ריכוז"],"פושדאון בכבל":["דיפס במכונה","קיקבק"],"לחיצת חזה בשיפוע":["לחיצת חזה במכונה","פלייז כבלים"],"משיכת פולי עליון":["משיכה בגריפ צר","משיכת מכונה"],"חתירה בכבל בישיבה":["חתירת מכונה","חתירה במשקולת"],"לחיצת כתפיים":["לחיצת מכונה","הרמות קדמיות"],"הרמות צד":["הרמות צד בכבל","הרמות צד במכונה"]};
+const LIB=[["דיפס במכונה","תלת ראשי"],["סלסול בכבל","דו ראשי"],["פלייז כבלים","חזה"],["הרמות אחוריות","כתפיים"],["כיפוף בטן במכונה","בטן"],["כפיפת ברכיים בישיבה","רגליים"]];
+const T={p:140,k:2600};const MEALS=["ארוחת בוקר","ארוחת צהריים","ארוחת ערב","ביניים"];
+const DEF=()=>({wt:[],hist:[],meals:{},saved:[],water:{},photos:[],rest:90,t:null,lb:0});
+let DB=DEF(),db=null;
+function openDB(){return new Promise((res,rej)=>{if(!window.indexedDB)return rej();const r=indexedDB.open("uriel-fitness",1);r.onupgradeneeded=()=>r.result.createObjectStore("kv");r.onsuccess=()=>res(r.result);r.onerror=()=>rej(r.error)})}
+async function loadDB(){db=await openDB();const v=await new Promise(res=>{const q=db.transaction("kv").objectStore("kv").get("data");q.onsuccess=()=>res(q.result);q.onerror=()=>res(null)});if(v)Object.assign(DB,v);if(DB.t)Object.assign(T,DB.t)}
+function save(){if(!db){S.dbErr=1;return}try{const tx=db.transaction("kv","readwrite");tx.objectStore("kv").put(DB,"data");tx.onerror=()=>{S.dbErr=1;alert("השמירה נכשלה. צור גיבוי ובדוק מקום פנוי.")}}catch(e){S.dbErr=1;alert("השמירה נכשלה")}}
+const $=id=>document.getElementById(id);
+const iso=d=>{d=d||new Date();return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0")};
+let S={tab:"home",pl:0,met:"wt",chat:[["c","אני המאמן שלך. כרגע זו הדגמת ממשק: בגרסה האמיתית אענה לפי הנתונים שנשמרו."]],W:null,sum:null,re:0,sel:[]};
+const todayMeals=()=>DB.meals[iso()]||[];
+function tot(){return todayMeals().reduce((a,m)=>({k:a.k+m.k,p:a.p+m.p}),{k:0,p:0})}
+function lastOf(n){for(let i=DB.hist.length-1;i>=0;i--){const e=DB.hist[i].ex.find(x=>x.n==n);if(e&&e.sets.length)return{d:DB.hist[i].d,s:e.sets}}return null}
+function bestOf(n,hist){let b=null;(hist||DB.hist).forEach(h=>h.ex.forEach(e=>{if(e.n==n)e.sets.forEach(s=>{if(!b||s.w>b.w||(s.w==b.w&&s.r>b.r))b=s})}));return b}
+function ring(p){return `<div class="bar"><i style="width:${Math.min(100,p)}%"></i></div>`}
+function nextW(){const now=new Date(),dow=now.getDay(),done=DB.hist.some(h=>h.d==iso());for(let k=0;k<8;k++){const d=(dow+k)%7,i=PLAN.findIndex(p=>p.dw==d);if(i>=0&&!(k==0&&done))return{i,k}}}
+function nav(){$("nav").style.display=(S.W||S.sum)?"none":"flex";$("nav").innerHTML=TABS.map(t=>`<button class="${S.tab==t[0]?'on':''}" onclick="go('${t[0]}')"><span class="ic">${t[1]}</span>${t[2]}</button>`).join("")}
+function go(t){S.tab=t;S.W=null;S.sum=null;clearInterval(RT);S.re=0;R()}
+function home(){const n=nextW(),p=PLAN[n.i],t=tot(),lw=DB.wt.filter(x=>x.w).slice(-1)[0],now=new Date(),st=new Date(now);st.setDate(now.getDate()-now.getDay());
+const days=[...Array(7)].map((_,i)=>{const d=new Date(st);d.setDate(st.getDate()+i);return{l:"אבגדהוש"[i],ok:DB.hist.some(h=>h.d==iso(d)),td:i==now.getDay()}}),cnt=days.filter(d=>d.ok).length;
+return `<main><div class="row"><div><div class="sub">שלום וברוך הבא</div><h1>היי אוריאל 👋</h1></div><button class="link" style="font-size:30px" onclick="S.tab='set';R()">⚙️</button></div>${S.dbErr?'<div class="card" style="border-color:#ff7b7b">⚠️ השמירה הקבועה לא זמינה כאן. נתונים לא יישמרו אחרי סגירה.</div>':''}
+<div class="card" style="border-color:var(--g)"><div class="sub">האימון הבא · ${n.k==0?'היום':n.k==1?'מחר':p.d}</div><div class="row"><div><div style="font-weight:800;font-size:23px">${p.n}</div><div class="sub">${p.g.map(x=>x[0]).join(" · ")}</div></div><span style="font-size:38px">💪</span></div><button class="btn" style="margin-top:14px" onclick="start(${n.i})">התחל אימון</button></div>
+<div class="grid"><div class="card"><div class="sub">${lw?'משקל נוכחי':'משקל התחלתי'}</div><div class="big">${lw?lw.w:78} <span class="u">ק״ג</span></div></div><div class="card"><div class="sub">אימונים השבוע</div><div class="big g">${cnt}<span class="m">/3</span></div></div></div>
+<div class="card"><div class="row"><b>חלבון</b><span><b class="g">${t.p}</b> / ${T.p} ג׳</span></div>${ring(t.p/T.p*100)}<div class="row" style="margin-top:16px"><b>קלוריות</b><span><b class="g">${t.k}</b> / ${T.k.toLocaleString()}</span></div>${ring(t.k/T.k*100)}<div class="sub" style="margin-top:10px">יעדים מוצעים, ייערכו בהמשך. הנתונים נספרים מהארוחות שתוסיף.</div></div>
+<div class="card"><b>התקדמות שבועית</b><div class="row" style="margin-top:12px">${days.map(d=>`<div style="text-align:center"><div style="width:38px;height:38px;border-radius:50%;background:${d.ok?'var(--g)':'var(--card2)'};color:#000;line-height:38px;font-weight:800;${d.td?'outline:2px solid #fff':''}">${d.ok?'✓':''}</div><div class="m" style="font-size:14px;margin-top:4px">${d.l}</div></div>`).join("")}</div></div>
+<div class="sub">יעד: גוף שרירי, ידיים גדולות ובטן חטובה</div></main>`}
+function train(){const n=nextW().i;return `<main><h1>אימונים</h1><div class="sub">3 ימים בשבוע, מחולקים להתאוששות מיטבית</div><div style="height:12px"></div>
+${PLAN.map((p,i)=>`<div class="card" style="${S.pl==i?'border-color:var(--g)':''}" onclick="S.pl=${i};R()"><div class="row"><div><div class="g" style="font-weight:800">${p.d}${i==n?' · הבא':''}</div><div style="font-weight:800;font-size:22px">${p.n}</div><div class="sub">${p.f}</div></div><span class="m">${p.g.reduce((a,x)=>a+x[1].length,0)} תרגילים</span></div>
+${S.pl==i?`<div style="margin-top:12px">${p.g.map(x=>`<div style="margin-top:10px"><span class="mg">${x[0]}</span>${x[1].map(e=>`<div class="pr"><span>${e[0]}</span><span class="m">${e[1]}×${e[2]}</span></div>`).join("")}</div>`).join("")}<button class="btn" style="margin-top:16px" onclick="event.stopPropagation();start(${i})">התחל את האימון</button></div>`:`<div style="margin-top:10px">${p.g.map(x=>`<span class="mg">${x[0]}</span>`).join("")}</div>`}</div>`).join("")}</main>`}
+function start(i){const p=PLAN[i],ex=[];p.g.forEach(g=>g[1].forEach(e=>ex.push({n:e[0],m:g[0],sets:[...Array(e[1])].map(()=>({w:"",r:"",d:false}))})));S.W={i,n:p.n,ex,c:0,t:Date.now()};R()}
+function work(){const W=S.W,e=W.ex[W.c],L=lastOf(e.n);
+return `<main style="padding-bottom:230px"><div class="top"><button class="link r" onclick="if(confirm('לצאת מהאימון בלי לשמור?'))go('home')">יציאה</button><b>${W.n}</b><button class="link" onclick="finish()">סיום</button></div>
+<div class="bar" style="margin-top:0"><i style="width:${W.c/W.ex.length*100}%"></i></div><div class="sub" style="margin-top:6px">תרגיל ${W.c+1} מתוך ${W.ex.length}</div>
+<h1>${e.n}</h1><span class="mg">${e.m}</span><div class="vid"><b>▶</b>סרטון הדגמה (יתחבר בשלב האימונים)</div>
+<div class="card" style="background:#10200f"><div class="sub">פעם קודמת</div>${L?`<div style="font-weight:700;font-size:18px">${L.s.map(s=>s.w+"×"+s.r).join("  ·  ")}</div>`:`<div class="m">עדיין לא בוצע, אין נתוני השוואה</div>`}</div>
+<div class="card"><div class="set m" style="font-size:14px"><span>סט</span><span style="text-align:center">משקל (ק״ג)</span><span style="text-align:center">חזרות</span><span></span></div>
+${e.sets.map((s,j)=>{const l=L&&(L.s[j]||L.s[L.s.length-1]);return `<div class="set"><b style="font-size:20px">${j+1}</b><input type="number" inputmode="decimal" value="${s.w}" placeholder="${l?l.w:'0'}" onchange="W2(${j},'w',this.value)"><input type="number" inputmode="numeric" value="${s.r}" placeholder="${l?l.r:'0'}" onchange="W2(${j},'r',this.value)"><button class="ck ${s.d?'d':''}" onclick="tick(${j})">✓</button></div>`}).join("")}
+<button class="link" onclick="S.W.ex[S.W.c].sets.push({w:'',r:'',d:false});R()">+ הוסף סט</button></div>
+<div class="grid"><button class="btn o s" onclick="swap()">🔄 החלף תרגיל</button><button class="btn o s" onclick="addEx()">+ הוסף תרגיל</button></div>
+<div class="row" style="margin:6px 0 14px"><button class="link r" onclick="rem()">הסר תרגיל</button></div>
+<div class="grid"><button class="btn o s" onclick="if(S.W.c>0){S.W.c--;R()}">הקודם</button><button class="btn s" onclick="nx()">${W.c==W.ex.length-1?'סיים אימון':'התרגיל הבא'}</button></div></main><div id="rp"></div>`}
+function W2(j,k,v){S.W.ex[S.W.c].sets[j][k]=v}
+function tick(j){const s=S.W.ex[S.W.c].sets[j],L=lastOf(S.W.ex[S.W.c].n),l=L&&(L.s[j]||L.s[L.s.length-1]);if(!s.d){if(s.w===""&&l)s.w=l.w;if(s.r===""&&l)s.r=l.r}s.d=!s.d;if(s.d)startRest(DB.rest);R()}
+function nx(){if(S.W.c==S.W.ex.length-1)finish();else{S.W.c++;R()}}
+let RT;function startRest(s){S.re=Date.now()+s*1000;clearInterval(RT);RT=setInterval(rp,250);rp()}
+function adj(d){if(S.re){S.re+=d*1000;rp()}else{DB.rest=Math.max(15,DB.rest+d);save();rp()}}
+function setRest(s){DB.rest=s;save();if(S.re)startRest(s);else rp()}
+function skip(){clearInterval(RT);S.re=0;rp()}
+function rp(){const el=$("rp");if(!el)return;let l=S.re?Math.ceil((S.re-Date.now())/1000):0;if(S.re&&l<=0){clearInterval(RT);S.re=0;try{navigator.vibrate&&navigator.vibrate([200,100,200])}catch(e){}}
+const run=S.re>0,v=run?l:DB.rest;
+el.innerHTML=`<div class="row"><b>${run?'מנוחה':S.re===0&&l<=0&&el.dataset.done?'':'טיימר מנוחה'}</b><span class="m">ברירת מחדל: ${DB.rest} שנ׳</span></div><div class="tm ${run?'g':''}" style="margin:8px 0">${Math.floor(v/60)}:${String(v%60).padStart(2,"0")}</div>
+<div class="row" style="margin-bottom:10px"><button class="chip" onclick="adj(-15)">−15</button><button class="btn s" style="width:auto;flex:1" onclick="${run?'skip()':'startRest(DB.rest)'}">${run?'דלג על המנוחה':'התחל מנוחה'}</button><button class="chip" onclick="adj(15)">+15</button></div>
+<div class="row" style="gap:4px">${[60,90,120,180].map(x=>`<button class="chip ${DB.rest==x?'on':''}" style="margin:0" onclick="setRest(${x})">${x} שנ׳</button>`).join("")}</div>`}
+function sheet(h){$("ov").innerHTML=`<div class="sheet" onclick="if(event.target==this)closeS()"><div>${h}<button class="btn s" style="margin-top:14px" onclick="closeS()">סגור</button></div></div>`}
+function closeS(){$("ov").innerHTML=""}
+function swap(){const e=S.W.ex[S.W.c],a=ALTS[e.n]||["תרגיל חלופי א׳","תרגיל חלופי ב׳"];S.alts=a;sheet(`<b style="font-size:20px">החלפת ${e.n}</b><div style="height:10px"></div>${a.map((x,k)=>`<div class="opt" onclick="S.W.ex[S.W.c].n=S.alts[${k}];closeS();R()">${x}</div>`).join("")}`)}
+function addEx(){sheet(`<b style="font-size:20px">הוספת תרגיל</b><div style="height:10px"></div>${LIB.map((x,k)=>`<div class="opt" onclick="S.W.ex.push({n:LIB[${k}][0],m:LIB[${k}][1],sets:[{w:'',r:'',d:false},{w:'',r:'',d:false},{w:'',r:'',d:false}]});S.W.c=S.W.ex.length-1;closeS();R()">${x[0]} <span class="m">· ${x[1]}</span></div>`).join("")}`)}
+function rem(){if(S.W.ex.length<2||!confirm("להסיר את התרגיל?"))return;S.W.ex.splice(S.W.c,1);S.W.c=Math.max(0,S.W.c-1);R()}
+function finish(){const W=S.W,ex=W.ex.map(e=>({n:e.n,sets:e.sets.filter(s=>s.d).map(s=>({w:+s.w||0,r:+s.r||0}))})).filter(e=>e.sets.length);let sets=0,vol=0,prs=[];
+ex.forEach(e=>{const b=bestOf(e.n);e.sets.forEach(s=>{sets++;vol+=s.w*s.r});const nb=bestOf(e.n,[{ex:[e]}]);if(nb&&nb.w>0&&(!b||nb.w>b.w))prs.push(e.n+": "+nb.w+" ק״ג"+(b?" (קודם "+b.w+")":""))});
+S.sum={n:W.n,sets,vol,ex,prs,min:Math.max(1,Math.round((Date.now()-W.t)/60000))};if(sets){DB.hist.push({d:iso(),n:W.n,ex});save()}S.W=null;clearInterval(RT);S.re=0;R()}
+function summ(){const s=S.sum;return `<main style="padding-bottom:40px"><div style="text-align:center;font-size:52px;margin-top:16px">🏁</div><h1 style="text-align:center">סיכום אימון</h1><div class="sub" style="text-align:center">${s.n}</div>
+${s.sets?'':'<div class="empty">לא סומנו סטים, האימון לא נשמר.</div>'}<div class="grid" style="margin:18px 0">${[["משך",s.min+" דק׳"],["סטים",s.sets],["נפח כולל",s.vol+" ק״ג"],["תרגילים",s.ex.length]].map(x=>`<div class="card" style="margin:0"><div class="sub">${x[0]}</div><div class="big g">${x[1]}</div></div>`).join("")}</div>
+${s.prs.length?`<div class="card"><b>🏆 שיאים חדשים</b>${s.prs.map(p=>`<div class="pr">${p}</div>`).join("")}</div>`:""}
+<div class="card"><b>פירוט</b>${s.ex.map(e=>`<div class="pr"><span>${e.n}</span><span class="m">${e.sets.map(x=>x.w+"×"+x.r).join(" · ")}</span></div>`).join("")}</div>
+<div class="card"><b>להמשך</b><div class="sub">אם ביצעת את כל החזרות בטכניקה נקייה והתאוששת טוב, כדאי לשקול העלאה קלה. זו הצעה בלבד והמשקל לא יעלה אוטומטית.</div></div><button class="btn" onclick="go('home')">חזרה לבית</button></main>`}
+function food(){const t=tot(),w=DB.water[iso()]||0;
+return `<main><h1>תזונה</h1><div class="card"><div class="row"><div><div class="sub">נשאר להשלמה</div><div class="big g">${Math.max(0,T.p-t.p)} <span class="u">גרם חלבון</span></div></div><div class="m" style="text-align:left">${t.k} / ${T.k}<br>קלוריות</div></div>${ring(t.p/T.p*100)}<div class="sub" style="margin-top:8px">יעדים מוצעים לעריכה בהמשך</div></div>
+<div class="card"><div class="row"><b>מים 💧</b><span>${w} / 8 כוסות</span></div><div style="display:flex;gap:6px;margin-top:12px">${[...Array(8)].map((_,i)=>`<div onclick="DB.water[iso()]=${i+1==w?i:i+1};save();R()" style="flex:1;height:48px;border-radius:10px;background:${i<w?'var(--g)':'var(--card2)'}"></div>`).join("")}</div></div>
+${MEALS.map(m=>{const L=todayMeals().map((x,i)=>[x,i]).filter(x=>x[0].t==m);return `<div class="card"><div class="row"><b>${m}</b><button class="link" onclick="addForm('${m}')">+ הוסף</button></div>${L.length?L.map(x=>`<div class="pr"><span>${x[0].n}<div class="sub">${x[0].k} קל׳ · ${x[0].p} ג׳ חלבון</div></span><button class="link r" onclick="delM(${x[1]})">הסר</button></div>`).join(""):'<div class="sub">עדיין לא נוסף</div>'}</div>`}).join("")}
+<div class="card"><b>ארוחות קבועות ⭐</b>${DB.saved.length?DB.saved.map((x,i)=>`<div class="pr"><span onclick="useSaved(${i})" style="flex:1;cursor:pointer"><b>${x.n}</b><div class="sub">${x.k} קל׳ · ${x.p} ג׳ חלבון · הקש להוספה</div></span><button class="link r" onclick="DB.saved.splice(${i},1);save();R()">מחק</button></div>`).join(""):'<div class="empty">שמור ארוחה בעת ההוספה כדי להשתמש בה שוב בלחיצה אחת.</div>'}</div>
+<button class="btn o s" onclick="sheet('<b style=font-size:20px>צילום ארוחה</b><p class=sub>הערכה מתמונה תסומן כהערכה בלבד. דורשת חיבור לשירות AI ומפתח API מאובטח, ותתווסף בשלב התזונה.</p>')">📷 צלם ארוחה (בקרוב)</button></main>`}
+function addForm(m){sheet(`<b style="font-size:20px">הוספת מזון</b><div style="height:10px"></div><div class="ff">שם</div><input id="fn" placeholder="למשל: חזה עוף ואורז" style="text-align:right">
+<div class="grid" style="margin-top:10px"><div><div class="ff">קלוריות</div><input id="fk" type="number" inputmode="numeric"></div><div><div class="ff">חלבון (ג׳)</div><input id="fp2" type="number" inputmode="decimal"></div><div><div class="ff">פחמימות</div><input id="fc" type="number" inputmode="decimal"></div><div><div class="ff">שומנים</div><input id="ft" type="number" inputmode="decimal"></div></div>
+<div class="ff" style="margin-top:10px">ארוחה</div><select id="fm">${MEALS.map(x=>`<option ${x==m?'selected':''}>${x}</option>`).join("")}</select>
+<label style="display:flex;gap:10px;align-items:center;margin:14px 0;font-weight:600"><input type="checkbox" id="fs" style="width:26px;height:26px">שמור כארוחה קבועה</label><button class="btn" onclick="addFood()">הוסף</button>`)}
+function addFood(){const n=$("fn").value.trim();if(!n){alert("חסר שם");return}const x={n,k:+$("fk").value||0,p:+$("fp2").value||0,c:+$("fc").value||0,f:+$("ft").value||0,t:$("fm").value};const k=iso();(DB.meals[k]=DB.meals[k]||[]).push(x);if($("fs").checked)DB.saved.push({n,k:x.k,p:x.p,c:x.c,f:x.f});save();closeS();R()}
+function useSaved(i){sheet(`<b style="font-size:20px">להוסיף ל…</b><div style="height:10px"></div>${MEALS.map(m=>`<div class="opt" onclick="addSaved(${i},'${m}')">${m}</div>`).join("")}`)}
+function addSaved(i,m){const k=iso();(DB.meals[k]=DB.meals[k]||[]).push(Object.assign({},DB.saved[i],{t:m}));save();closeS();R()}
+function delM(i){DB.meals[iso()].splice(i,1);save();R()}
+function chart(d,u){if(d.length<2)return `<div class="empty">הוסף לפחות שתי מדידות כדי לראות גרף</div>`;const w=340,h=170,mn=Math.min(...d),mx=Math.max(...d),r=(mx-mn)||1,pts=d.map((v,i)=>[12+i*(w-24)/(d.length-1),h-14-(v-mn)/r*(h-34)]);
+return `<svg viewBox="0 0 ${w} ${h}" width="100%"><path d="M${pts.map(p=>p.join(",")).join(" L")}" fill="none" stroke="#39FF14" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>${pts.map(p=>`<circle cx="${p[0]}" cy="${p[1]}" r="5" fill="#39FF14"/>`).join("")}</svg><div class="row"><span class="m">${d[0]} ${u}</span><b class="g">${d[d.length-1]} ${u}</b></div>`}
+function prog(){const M={wt:["משקל גוף","ק״ג"],arm:["היקף זרוע","ס״מ"],waist:["היקף בטן","ס״מ"]},v=DB.wt.filter(x=>x[S.met]).map(x=>x[S.met]);
+const prs=[...new Set(DB.hist.flatMap(h=>h.ex.map(e=>e.n)))].map(n=>[n,bestOf(n)]).filter(x=>x[1]&&x[1].w>0);
+return `<main><h1>התקדמות</h1><div style="margin:10px 0">${Object.keys(M).map(k=>`<button class="chip ${S.met==k?'on':''}" onclick="S.met='${k}';R()">${M[k][0]}</button>`).join("")}</div>
+<div class="card"><b>${M[S.met][0]}</b>${chart(v,M[S.met][1])}</div><button class="btn s" onclick="measForm()">+ הוסף מדידה</button>
+<h2 style="margin:22px 0 10px;font-size:20px">תמונות התקדמות</h2>
+<div class="card">${DB.photos.length?`<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px">${DB.photos.map((p,i)=>`<div class="ph ${S.sel.includes(i)?'s':''}"><img src="${p.u}" onclick="selPh(${i})"><button onclick="delPh(${i})">×</button><div class="sub" style="font-size:13px">${new Date(p.d).toLocaleDateString('he-IL')}</div></div>`).join("")}</div><div class="sub" style="margin:10px 0">בחר שתי תמונות להשוואה</div>`:'<div class="empty">עדיין אין תמונות</div>'}
+<div class="grid"><button class="btn o s" onclick="$('fp').click()">📸 הוסף תמונה</button><button class="btn s" onclick="cmp()">השווה</button></div></div>
+<h2 style="margin:22px 0 10px;font-size:20px">שיאים אישיים 🏆</h2><div class="card">${prs.length?prs.map(x=>`<div class="pr"><span>${x[0]}</span><b class="g">${x[1].w} ק״ג × ${x[1].r}</b></div>`).join(""):'<div class="empty">השיאים יופיעו אחרי האימון הראשון</div>'}</div></main>`}
+function measForm(){sheet(`<b style="font-size:20px">מדידה חדשה</b><div class="sub">אפשר למלא רק חלק מהשדות</div><div style="height:10px"></div><div class="ff">משקל (ק״ג)</div><input id="mw" type="number" inputmode="decimal"><div class="ff" style="margin-top:10px">היקף זרוע (ס״מ)</div><input id="ma" type="number" inputmode="decimal"><div class="ff" style="margin-top:10px">היקף בטן (ס״מ)</div><input id="mb" type="number" inputmode="decimal"><button class="btn" style="margin-top:14px" onclick="addMeas()">שמור</button>`)}
+function addMeas(){const e={d:iso()};[["w","mw"],["arm","ma"],["waist","mb"]].forEach(a=>{const v=parseFloat($(a[1]).value);if(v)e[a[0]]=v});if(Object.keys(e).length>1){const i=DB.wt.findIndex(x=>x.d==e.d);if(i>=0)Object.assign(DB.wt[i],e);else DB.wt.push(e);save()}closeS();R()}
+function addPh(inp){const f=inp.files[0];if(!f)return;const fr=new FileReader();fr.onload=()=>{const im=new Image();im.onload=()=>{const sc=Math.min(1,700/Math.max(im.width,im.height)),c=document.createElement("canvas");c.width=im.width*sc;c.height=im.height*sc;c.getContext("2d").drawImage(im,0,0,c.width,c.height);DB.photos.push({d:iso(),u:c.toDataURL("image/jpeg",.7)});save();inp.value="";R()};im.src=fr.result};fr.readAsDataURL(f)}
+function selPh(i){const k=S.sel.indexOf(i);if(k>=0)S.sel.splice(k,1);else{S.sel.push(i);if(S.sel.length>2)S.sel.shift()}R()}
+function delPh(i){if(!confirm("למחוק את התמונה?"))return;DB.photos.splice(i,1);S.sel=[];save();R()}
+function cmp(){if(S.sel.length<2){alert("בחר שתי תמונות");return}const a=DB.photos[Math.min(...S.sel)],b=DB.photos[Math.max(...S.sel)];sheet(`<b style="font-size:20px">השוואה</b><div class="grid" style="margin-top:10px">${[a,b].map(p=>`<div><img src="${p.u}" style="width:100%;border-radius:12px"><div class="sub" style="text-align:center">${new Date(p.d).toLocaleDateString('he-IL')}</div></div>`).join("")}</div>`)}
+function coach(){return `<main style="padding-bottom:170px"><h1>המאמן שלך</h1><div class="sub" style="margin-bottom:14px">יענה לפי הנתונים האמיתיים שנשמרו</div>${S.chat.map(c=>`<div class="bub ${c[0]}">${c[1]}</div>`).join("")}
+<div style="margin:10px 0">${["כמה חלבון נשאר לי?","איזה אימון יש לי הבא?"].map(q=>`<button class="chip" onclick="ask('${q}')">${q}</button>`).join("")}</div>
+<div class="row" style="position:fixed;bottom:calc(84px + env(safe-area-inset-bottom,0px));left:50%;transform:translateX(-50%);width:calc(100% - 32px);max-width:398px"><input id="q" placeholder="כתוב למאמן..." style="text-align:right;font-weight:400"><button class="btn" style="width:60px;padding:0" onclick="ask($('q').value)">➤</button></div></main>`}
+function ask(q){if(!q.trim())return;const n=PLAN[nextW().i];S.chat.push(["u",q]);S.chat.push(["c",q.includes("חלבון")?`נשארו לך ${Math.max(0,T.p-tot().p)} גרם חלבון להיום, לפי מה שהוספת.`:q.includes("אימון")?`האימון הבא: ${n.d}, ${n.n}.`:"שיחה חופשית דורשת חיבור לשירות AI ומפתח API מאובטח, וזה יתווסף בשלב המאמן."]);R();scrollTo(0,9999)}
+function settings(){const st=!!navigator.standalone;return `<main><div class="top"><button class="link" onclick="go('home')">→ חזרה</button><b>הגדרות וגיבוי</b><span style="width:60px"></span></div>
+<div class="card"><b>מצב האפליקציה</b><div class="pr"><span>הפעלה</span><b class="${st?'g':''}">${st?'מותקנת במסך הבית ✓':'בתוך הדפדפן'}</b></div><div class="pr"><span>שמירה קבועה (IndexedDB)</span><b class="${db?'g':''}">${db?'פעילה ✓':'לא זמינה'}</b></div><div class="pr"><span>אימונים שמורים</span><b>${DB.hist.length}</b></div><div class="pr"><span>גיבוי אחרון</span><b>${DB.lb?new Date(DB.lb).toLocaleDateString('he-IL'):'טרם בוצע'}</b></div>${st?'':'<div class="sub" style="margin-top:10px">שים לב: הנתונים בדפדפן נפרדים מהאפליקציה שמותקנת במסך הבית. התקן קודם, והזן נתונים רק באפליקציה המותקנת.</div>'}</div>
+<div class="card"><b>התקנה במסך הבית</b><div class="sub" style="margin-top:6px">1. פתח את הקישור ב-Safari<br>2. הקש על כפתור השיתוף ⬆️<br>3. בחר ״הוסף למסך הבית״<br>4. פתח את URIEL מהמסך הבית</div></div>
+<div class="card"><b>יעדים יומיים</b><div class="grid" style="margin-top:10px"><div><div class="ff">חלבון (ג׳)</div><input id="tp" type="number" inputmode="numeric" value="${T.p}"></div><div><div class="ff">קלוריות</div><input id="tk" type="number" inputmode="numeric" value="${T.k}"></div></div><button class="btn s" style="margin-top:12px" onclick="saveT()">שמור יעדים</button></div>
+<div class="card"><b>גיבוי</b><div class="sub" style="margin:6px 0 12px">כולל אימונים, תזונה, מדידות ותמונות. מומלץ אחת לשבוע.</div><button class="btn s" onclick="mkBackup()">צור גיבוי</button><div id="bo"></div></div>
+<div class="card"><b>שחזור</b><div class="sub" style="margin:6px 0 12px">יחליף את כל הנתונים הקיימים.</div><input type="file" id="rf" accept=".json,application/json,text/plain" hidden onchange="rsFile(this)"><button class="btn o s" onclick="$('rf').click()">בחר קובץ גיבוי</button><div class="ff" style="margin-top:12px">או הדבק טקסט גיבוי</div><textarea id="rs" style="width:100%;height:90px;background:var(--card2);color:#fff;border:1px solid var(--line);border-radius:12px;font-size:13px;direction:ltr"></textarea><button class="btn o s" style="margin-top:10px" onclick="rsText()">שחזר מהטקסט</button></div>
+<button class="link r" onclick="wipe()">מחק את כל הנתונים</button></main>`}
+function bkText(){return JSON.stringify({app:"URIEL FITNESS",v:1,exported:new Date().toISOString(),data:DB})}
+function mkBackup(){DB.lb=Date.now();save();$("bo").innerHTML=`<textarea id="bk" readonly style="width:100%;height:100px;margin-top:12px;background:var(--card2);color:#fff;border:1px solid var(--line);border-radius:12px;font-size:12px;direction:ltr"></textarea><div class="grid" style="margin-top:10px"><button class="btn o s" onclick="copyBk()">העתק</button><button class="btn o s" onclick="shareBk()">שמור כקובץ</button></div>`;$("bk").value=bkText()}
+async function copyBk(){const ta=$("bk");try{await navigator.clipboard.writeText(ta.value)}catch(e){ta.removeAttribute("readonly");ta.select();ta.setSelectionRange(0,9e9);document.execCommand("copy");ta.setAttribute("readonly","")}alert("הגיבוי הועתק. הדבק אותו בהערות או שלח לעצמך.")}
+async function shareBk(){const f=new File([$("bk").value],"uriel-fitness-backup-"+iso()+".json",{type:"application/json"});try{if(navigator.canShare&&navigator.canShare({files:[f]})){await navigator.share({files:[f]});return}}catch(e){if(e.name=="AbortError")return}const a=document.createElement("a");a.href=URL.createObjectURL(f);a.download=f.name;a.click()}
+function doRestore(txt){let o;try{o=JSON.parse(txt)}catch(e){alert("הטקסט אינו גיבוי תקין");return}if(!o||o.app!="URIEL FITNESS"||!o.data||!Array.isArray(o.data.hist)){alert("זה לא גיבוי של URIEL FITNESS");return}if(!confirm("השחזור יחליף את כל הנתונים הקיימים. להמשיך?"))return;DB=Object.assign(DEF(),o.data);if(DB.t)Object.assign(T,DB.t);save();alert("השחזור הושלם");go("home")}
+function rsFile(i){const f=i.files[0];if(!f)return;const r=new FileReader();r.onload=()=>doRestore(r.result);r.readAsText(f);i.value=""}
+function rsText(){doRestore($("rs").value)}
+function saveT(){const p=+$("tp").value,k=+$("tk").value;if(!p||!k){alert("ערך לא תקין");return}T.p=p;T.k=k;DB.t={p,k};save();alert("היעדים נשמרו")}
+function wipe(){if(confirm("למחוק את כל הנתונים? אי אפשר לשחזר בלי גיבוי.")&&confirm("בטוח?")){DB=DEF();T.p=140;T.k=2600;save();go("home")}}
+function R(){nav();$("screen").innerHTML=S.sum?summ():S.W?work():({home,train,food,prog,coach,set:settings})[S.tab]();if(S.W)rp();scrollTo(0,0)}
+try{navigator.storage&&navigator.storage.persist&&navigator.storage.persist()}catch(e){}
+if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js").catch(()=>{});
+loadDB().then(R).catch(()=>{S.dbErr=1;R()});
+</script>
+</body>
+</html>
