@@ -85,7 +85,7 @@ function start(i){const p=PLAN[i],ex=[];p.g.forEach(g=>g[1].forEach(e=>ex.push({
 function work(){const W=S.W,e=W.ex[W.c],L=lastOf(e.n);
 return `<main style="padding-bottom:230px"><div class="top"><button class="link r" onclick="if(confirm('לצאת מהאימון בלי לשמור?'))go('home')">יציאה</button><b>${W.n}</b><button class="link" onclick="finish()">סיום</button></div>
 <div class="bar" style="margin-top:0"><i style="width:${W.c/W.ex.length*100}%"></i></div><div class="sub" style="margin-top:6px">תרגיל ${W.c+1} מתוך ${W.ex.length}</div>
-<h1>${e.n}</h1><span class="mg">${e.m}</span><div class="vid"><b>▶</b>https:// https://youtu.be/ot3_eIti6gc(יתחבר בשלב האימונים)</div>
+<h1>${e.n}</h1><span class="mg">${e.m}</span><div class="vid"><b>▶</b>https:// </div>
 <div class="card" style="background:#10200f"><div class="sub">פעם קודמת</div>${L?`<div style="font-weight:700;font-size:18px">${L.s.map(s=>s.w+"×"+s.r).join("  ·  ")}</div>`:`<div class="m">עדיין לא בוצע, אין נתוני השוואה</div>`}</div>
 <div class="card"><div class="set m" style="font-size:14px"><span>סט</span><span style="text-align:center">משקל (ק״ג)</span><span style="text-align:center">חזרות</span><span></span></div>
 ${e.sets.map((s,j)=>{const l=L&&(L.s[j]||L.s[L.s.length-1]);return `<div class="set"><b style="font-size:20px">${j+1}</b><input type="number" inputmode="decimal" value="${s.w}" placeholder="${l?l.w:'0'}" onchange="W2(${j},'w',this.value)"><input type="number" inputmode="numeric" value="${s.r}" placeholder="${l?l.r:'0'}" onchange="W2(${j},'r',this.value)"><button class="ck ${s.d?'d':''}" onclick="tick(${j})">✓</button></div>`}).join("")}
